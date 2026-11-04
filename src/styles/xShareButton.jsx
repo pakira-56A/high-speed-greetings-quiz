@@ -27,6 +27,7 @@ export const XShareButton = ({ quizData, score }) => {
     >
       <img
         src={isHovered ? "/images/xshare-hover.svg" : "/images/xshare.svg"}
+        alt="Xでシェアする"
         style={{
           width: "60px",
           height: "60px"

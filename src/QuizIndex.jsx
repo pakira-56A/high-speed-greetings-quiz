@@ -69,6 +69,8 @@ const QuizApp = () => {
     if (justQuestion < quizData.length) {
       shuffleAnswers()
     }
+    // shuffleAnswers は毎回作り直される関数で、依存に入れると再実行されすぎるため問題番号だけを見る
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [justQuestion])
 
   useEffect(() => {
@@ -108,6 +110,8 @@ const QuizApp = () => {
     return () => {
       clearInterval(timer)
     }
+    // nextQuestion は毎回作り直される関数で、依存に入れるとタイマーが張り直されるため状態と問題番号だけを見る
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gameState, justQuestion])
 
   const handleAnswer = (selectedAnswer) => {
